@@ -1,4 +1,3 @@
-from numpy import short
 from numpy.core.fromnumeric import argsort
 import spacy
 
