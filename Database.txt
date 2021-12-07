@@ -1,52 +1,519 @@
-On 26 November 2021, WHO designated the variant B.1.1.529 a variant of concern, named Omicron, on the advice of WHO’s Technical Advisory Group on Virus Evolution (TAG-VE).  This decision was based on the evidence presented to the TAG-VE that Omicron has several mutations that may have an impact on how it behaves, for example, on how easily it spreads or the severity of illness it causes. Here is a summary of what is currently known.  
+JuggernautProducts
+JuggernautProducts
+2 years ago
+5 subscribers
+Hey, so you definitely have a lot more experience with this than I do. When using your methods to make Vader Sentiment more accurate along with Text Blob while using the sample texts provided, I keep running into major accuracy issues. For example,  on the negative text file, both Vader and Text Blob end up classifying the text as roughly 50/50 positive and negative, which is no better than flipping a coin. Do you know why this might be?
 
- 
 
-Current knowledge about Omicron 
+vidIQ badge
 
-Researchers in South Africa and around the world are conducting studies to better understand many aspects of Omicron and will continue to share the findings of these studies as they become available.  
+Guruappa Padasali
+Guruappa Padasali
+2 years ago
+Hi, Line 22 of the code where we are comparing the polarity to a factor.  Should it be - 0.1 instead of + 0.1?  Just a thought.
 
-Transmissibility: It is not yet clear whether Omicron is more transmissible (e.g., more easily spread from person to person) compared to other variants, including Delta. The number of people testing positive has risen in areas of South Africa affected by this variant, but epidemiologic studies are underway to understand if it is because of Omicron or other factors.  
+1
 
-Severity of disease: It is not yet clear whether infection with Omicron causes more severe disease compared to infections with other variants, including Delta.  Preliminary data suggests that there are increasing rates of hospitalization in South Africa, but this may be due to increasing overall numbers of people becoming infected, rather than a result of specific infection with Omicron.  There is currently no information to suggest that symptoms associated with Omicron are different from those from other variants.  Initial reported infections were among university students—younger individuals who tend to have more mild disease—but understanding the level of severity of the Omicron variant will take days to several weeks.  All variants of COVID-19, including the Delta variant that is dominant worldwide, can cause severe disease or death, in particular for the most vulnerable people, and thus prevention is always key. 
+vidIQ badge
 
- 
+Metod Novak
+Metod Novak
+3 years ago
+17 subscribers
+Hi at time 7:09 when you mention positive and negative accuracy, That actually should be precision.
 
-Effectiveness of prior SARS-CoV-2 infection 
+5
 
-Preliminary evidence suggests there may be an increased risk of reinfection with Omicron (ie, people who have previously had COVID-19 could become reinfected more easily with Omicron), as compared to other variants of concern, but information is limited. More information on this will become available in the coming days and weeks. 
+sentdex
+vidIQ badge
 
-Effectiveness of vaccines: WHO is working with technical partners to understand the potential impact of this variant on our existing countermeasures, including vaccines. Vaccines remain critical to reducing severe disease and death, including against the dominant circulating variant, Delta. Current vaccines remain effective against severe disease and death.   
+Cristi Neagu
+Cristi Neagu
+3 years ago
+39 subscribers
+Also, it's obvious TextBlob is "slightly better", since your condition for counting a sentence as valid is that it should have (for positive accuracy) a polarity greater or equal to 0.0001. It's then obvious that any sentence that passes that test will have a polarity greater than 0. You are counting them twice. You will always get 100% accuracy.
 
-Effectiveness of current tests: The widely used PCR tests continue to detect infection, including infection with Omicron, as we have seen with other variants as well. Studies are ongoing to determine whether there is any impact on other types of tests, including rapid antigen detection tests.  
+7
 
-Effectiveness of current treatments:   Corticosteroids and IL6 Receptor Blockers will still be effective for managing patients with severe COVID-19. Other treatments will be assessed to see if they are still as effective given the changes to parts of the virus in the Omicron variant.  
+vidIQ badge
 
- 
+David Pell
+David Pell
+3 years ago
+Does anyone know if the sentiment scores provided by VADER can be improved using word stemming techniques?
 
-Studies underway 
+1
 
-At the present time, WHO is coordinating with a large number of researchers around the world to better understand Omicron. Studies currently underway or underway shortly include assessments of transmissibility, severity of infection (including symptoms), performance of vaccines and diagnostic tests, and effectiveness of treatments.    
+vidIQ badge
 
-WHO encourages countries to contribute the collection and sharing of hospitalized patient data through the WHO COVID-19 Clinical Data Platform to rapidly describe clinical characteristics and patient outcomes.  
+Elli Valla
+Elli Valla
+2 years ago
+2 subscribers
+Hi! Thank you for this video. I have a question about the compound scores. The VADERSentiment documentation states that the threshold is >0.05, <-0.05 for positive and negative. 
+positive sentiment: compound score >= 0.05
+neutral sentiment: (compound score > -0.05) and (compound score < 0.05)
+negative sentiment: compound score <= -0.05
+Am I missing here something?
 
-More information will emerge in the coming days and weeks. WHO’s TAG-VE will continue to monitor and evaluate the data as it becomes available and assess how mutations in Omicron alter the behaviour of the virus.  
+2
 
- 
+vidIQ badge
 
-Recommended actions for countries 
+Maxim Abdulatif
+Maxim Abdulatif
+1 year ago
+10 subscribers
+Brilliant video dude !!!!! thanks a million (keep them coming) I just ran the code on a Dutch corpus and its doing fine!
 
-As Omicron has been designated a Variant of Concern, there are several actions WHO recommends countries to undertake, including enhancing surveillance and sequencing of cases;  sharing genome sequences on publicly available databases, such as GISAID; reporting initial cases or clusters to WHO; performing field investigations and laboratory assessments to better understand if Omicron has different transmission or disease characteristics, or impacts effectiveness of vaccines, therapeutics, diagnostics or public health and social measures.  More detail in the announcement from 26 November.  
 
-Countries should continue to implement the effective public health measures to reduce COVID-19 circulation overall, using a risk analysis and science-based approach. They should increase some public health and medical capacities to manage an increase in cases.  WHO is providing countries with support and guidance for both readiness and response.  
+sentdex
+vidIQ badge
 
-In addition, it is vitally important that inequities in access to COVID-19 vaccines are urgently addressed to ensure that vulnerable groups everywhere, including health workers and older persons, receive their first and second doses, alongside equitable access to treatment and diagnostics.  
+SirFloIII
+SirFloIII
+3 years ago
+15 subscribers
+in the later textblob analysis (19:17 onwards) you did a dumb. you only took the sample with polarity of greater than 0.5 and then asked then if the polarity was greater than 0 and of course it was, since 0.5 > 0 and > is transitive. of course you were getting 100% "accuracy", but thats cheating. of course you classify correctly on those samples where you classifiy correctly.
 
- 
+11
 
-Recommended actions for people 
+vidIQ badge
 
-The most effective steps individuals can take to reduce the spread of the COVID-19 virus is to keep a physical distance of at least 1 metre from others; wear a well-fitting mask; open windows to improve ventilation; avoid poorly ventilated or crowded spaces; keep hands clean; cough or sneeze into a bent elbow or tissue; and get vaccinated when it’s their turn.  
+Plamen Yankov
+Plamen Yankov
+8 months ago
+Thanks, it is very useful. Could I ask - do I need to define:
+ for line in f.read().split('\n'):
+        analysis = TextBlob(line)
+        if analysis.sentiment.polarity <= -0.001:
+            if analysis.sentiment.polarity <= 0:
+                neg_correct += 1
+            neg_count +=1
 
-WHO will continue to provide updates as more information becomes available, including following meetings of the TAG-VE. In addition, information will be available on WHO’s digital and social media platforms. 
+If i  want to analyze random reviews or just go ahead with 
+from textblob import TextBlob
 
+
+analysis = TextBlob("text")
+
+
+vidIQ badge
+
+Panos S
+Panos S
+3 years ago (edited)
+8 subscribers
+i really like your videos ,  but if its possible use a chrome plugin to invert the white color of webpages to something darker (eg. CareYourEyes plugin). The dark ide (alt-tab) white web page (alt-tab) dark ide, blows my eyes
+
+1
+
+vidIQ badge
+
+Shubhankar Madgulkar
+Shubhankar Madgulkar
+3 years ago
++1 for the move to sublime! what made you move? 
+
+great video as usual, keep em coming!
+
+
+vidIQ badge
+
+Okay Google
+Okay Google
+3 years ago
+1 subscribers
+18:27; line 27; 
+why here you can leave a = sign?  in this case there will be pos = neg and both are less than 0.1, which can not be treated as neg, and therefore increase the counter
+
+
+vidIQ badge
+
+Antoine Capriski
+Antoine Capriski
+3 years ago
+3 subscribers
+Big fan of your work sentdex, I'm a Master's degree student in NLP (about that, your series on NLTK was very useful). and it's always a pleasure to learn from your videos. Currently I'm very interested in words embedding, will you make a video or a series about word embedding, word2vec, etc ?
+
+
+vidIQ badge
+
+Siddhartha Biswas
+Siddhartha Biswas
+3 years ago
+2 subscribers
+Do you know any tool that classifies tweets on basis of emotions?
+or just identifies the emotions in that tweet ?
+I need it for a project
+
+1
+
+vidIQ badge
+
+FuZZbaLLbee
+FuZZbaLLbee
+3 years ago (edited)
+34 subscribers
+How do these compair to the 
+sentiment analysis built with tensorflow?
+
+1
+
+vidIQ badge
+
+Blu Cypher
+Blu Cypher
+2 years ago
+1 subscribers
+using your final example with textblob, the number of negative samples textblob identifies is only 2072 out of a total of 5332. If we use the negative.txt file to actually test for positive sentiment instead, we get 2345 which is higher than negative. So, textblob is actually saying that our negative sentiment file contains MORE positive sentiment than negative sentiment lol, which is entirely wrong for our case. Is there a better way of representing negative sentiment? Because if we were to go in blind not knowing our dataset contains negative sentiment, we would actually end up with polarity leaning towards the positive end. (first time doing sentiment analysis so trying to wrap my head around this aha)
+
+
+vidIQ badge
+
+Yuanyuan Fan
+Yuanyuan Fan
+10 months ago
+You made a mistake when using textblob the second time, which is why you kept getting 100% accuracy; it should not be 100% accuracy.
+
+
+vidIQ badge
+
+Debjit Chattopadhyay
+Debjit Chattopadhyay
+1 year ago
+7 subscribers
+does anyone know the translate to language codes in TextBlob().translate()?
+
+
+vidIQ badge
+
+Cruso
+Cruso
+3 years ago
+5 subscribers
+hey great video!
+Id be interested in the implementation of some unsupervised generative models, like GAN.
+
+
+vidIQ badge
+
+Yusuf Baysal
+Yusuf Baysal
+3 years ago
+Could you suggest library for Turkish language sentiment analysis. I am working on fasttext. I am wondering your opinion.
+
+
+vidIQ badge
+
+Shawn Sellen
+Shawn Sellen
+3 years ago
+4 subscribers
+It would be interesting to see a comparison with a dataset of tweets or  Reddit comments. VADER claims it's "specifically attuned to sentiments expressed in social media".  Emoticons, slang, all caps,  initialisms, acronyms, etc.
+
+
+vidIQ badge
+
+Cristi Neagu
+Cristi Neagu
+3 years ago
+39 subscribers
+You are making the assumption that every single line in the text you're analyzing is positive or negative, respectively. A review can be a mix of positive, neutral, and negative statements. As such, your accuracy metrics are irrelevant.
+
+1
+
+vidIQ badge
+
+Shivam Makan
+Shivam Makan
+3 years ago
+2 subscribers
+Finally you have started using an IDE :D
+
+1
+
+vidIQ badge
+
+Mailist Fajar
+Mailist Fajar
+9 days ago
+this is the greatest video i've ever seen
+
+
+vidIQ badge
+
+Stefano Sarti
+Stefano Sarti
+2 years ago
+Hello. Just a quick question off topic. I am using Python35 with Sublime as the IDE. I am trying every possible command to comment out lines but they do not seem to be working. Can anyone suggest a solution? Thanks. I also tried ctrl + / but no luck.
+
+
+vidIQ badge
+
+Wolf Rage
+Wolf Rage
+3 years ago
+17 subscribers
+I am glad u r finally using sublime...
+
+
+Big fan always 😊
+
+4
+
+sentdex
+vidIQ badge
+
+xxXXCarbon6XXxx
+xxXXCarbon6XXxx
+3 years ago
+9 subscribers
+Thanks for the comparison. 
+
+I have used Textblob on call centre data and thought it was ok, but wondered if there were alternatives.  I had never heard of Vader, only NLTK.  Given Textblob's ability to do sentiment analysis, text classification and tokenisation I think I'll stick to the Blob.  BTW it is interesting to use MatplotLib to scatter chart out sentiment vs polarity to see how your test data looks.
+
+
+vidIQ badge
+
+Muhammad Usman Akram
+Muhammad Usman Akram
+2 years ago
+can we use any of these packages for review baesd project??
+
+
+vidIQ badge
+
+Vinay Manchala
+Vinay Manchala
+3 years ago
+1 subscribers
+The one where you get 100% accuracy, you are considering the polarity either to be negative or  positive and checking the same in the next statement. if x < -0.001 then it is definitely less than 0 and if x > 0.0001 then it is clearly greater than 0. How is this logic even working? I am lost in this. Can you explain it clearly ?
+
+2
+
+vidIQ badge
+
+Mark Jay
+Mark Jay
+3 years ago
+21.1K subscribers
+I'm a simple man, I see new sentdex video, I like
+
+39
+
+sentdex
+vidIQ badge
+
+Ashish Agrawal
+Ashish Agrawal
+3 years ago
+will this code work on any dataset, like I have the reddit comment dataset,where each line is an individual comment or a reply. How accurate will it predict if I will set the polarity between 0.0001 to -0.0001..
+Please reply soon!
+
+
+vidIQ badge
+
+chrvlachos
+chrvlachos
+3 years ago
+140 subscribers
+I have installed VADER using pip, but I cannot get it to work. I have an excel file with tweets that I want to analyse... Can someone please help me?
+
+
+vidIQ badge
+
+Reema Wangkheirakpam
+Reema Wangkheirakpam
+3 years ago
+340 subscribers
+hi sentdex!! is it not possible to fetch tweets older than a week or so????
+
+
+vidIQ badge
+
+Edelcio Junior
+Edelcio Junior
+1 year ago
+Is there a playlist for this serie?
+
+
+vidIQ badge
+
+M Rooney
+M Rooney
+3 years ago
+PLEASE someone help! i want to follow along so bad and spent the whole day trying to fix this error,
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 6573: ordinal not in range(128)
+it happens in both vader and text blob. i can't find any fix for it , it wont even run simple
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+analyzer = SentimentIntensityAnalyzer()
+vs = analyzer.polarity_scores("VADER Sentiment looks interesting, I have high hopes!")
+print(vs)
+
+pleassssse to save my sanity and so i can follow along.
+thanks
+
+
+vidIQ badge
+
+Ashutosh Patole
+Ashutosh Patole
+2 years ago (edited)
+How about voice sentiment analysis @sentdex
+
+
+sentdex
+vidIQ badge
+
+Justin Houck
+Justin Houck
+3 years ago
+If you are getting this ERROR UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 4645: ordinal not in range(128)
+
+
+try:
+
+with open("positive.txt","r", encoding='utf-8') as f:
+
+
+vidIQ badge
+
+Py Suhayb
+Py Suhayb
+3 years ago
+15 subscribers
+thank you sentdex 
+please can get new series from android kivy
+
+
+vidIQ badge
+
+Hedley Quintana
+Hedley Quintana
+3 years ago
+237 subscribers
+#HoldIt!
+I speak Spanish and the translation seems accurate
+
+4
+
+vidIQ badge
+
+Eragon Ritter
+Eragon Ritter
+3 years ago
+4:22 The translation feature seems to be the old Google translate, so not really good...
+
+
+vidIQ badge
+
+Arnab Mondal
+Arnab Mondal
+1 year ago
+cannot install vaderSentiment on Anaconda.
+
+
+vidIQ badge
+
+tehBookDevourer
+tehBookDevourer
+3 years ago
+3 subscribers
+Awesome more dash
+
+
+sentdex
+vidIQ badge
+
+Mike Powers
+Mike Powers
+3 years ago
+7 subscribers
+mexican here, translation looks legit. one word off but the rest is good.
+
+
+vidIQ badge
+
+ankush sharma
+ankush sharma
+3 years ago
+Thanks bro
+
+
+sentdex
+vidIQ badge
+
+Dulal Sandip
+Dulal Sandip
+3 years ago
+110 subscribers
+good one bro..if possible make video on raspberry coded with python for camera and it detects the object and send you mail and message in your email
+
+
+vidIQ badge
+
+Kiris Ko
+Kiris Ko
+4 months ago
+4 subscribers
+does this work with emojis?
+
+
+vidIQ badge
+
+Gauthyeah
+Gauthyeah
+3 years ago
+8 subscribers
+I just freaked out when I saw Sublime on the thumbnail...
+
+4
+
+vidIQ badge
+
+BASH is obsolete. Python is my new gf.
+BASH is obsolete. Python is my new gf.
+3 years ago
+20 subscribers
+eats shoots and leaves.
+
+
+vidIQ badge
+
+Sebastian Nielsen
+Sebastian Nielsen
+3 years ago
+6 subscribers
+Where'd u get that shirt?
+
+
+vidIQ badge
+
+Murphy loves me
+Murphy loves me
+3 years ago
+1.79K subscribers
+You should start by saying what it is all about. Sentiment Analysis in 4 Minutes by Siraj is better video
+
+
+vidIQ badge
+
+Johnny Boss
+Johnny Boss
+3 years ago
+Please update the GTA V bot!!!
+
+
+vidIQ badge
+
+Thor Odinson
+Thor Odinson
+3 years ago
+5 subscribers
+notification squaaad
+
+1
+
+sentdex
