@@ -1,5 +1,5 @@
 
-# Senti-X version 0.01 
+# Senti-X version 0.02 
  
 
 

@@ -26,7 +26,6 @@ def Sentiment_analyser():
 
 
 
-
     def for_read():
         data_for_read = open("Database.txt", "r")
         return data_for_read.read()
@@ -47,8 +46,13 @@ def Sentiment_analyser():
     index_value_of_sorted_array = []
     index_value_of_sorted_array.clear()
     
-    
-
+    ##############################################################################################    
+    '''
+    bugs: Need to fix (gatter than 0.2000) storing values....
+    bugs: sentences Need capitalize...
+    bugs: user input capitalize...
+    '''
+    ##############################################################################################
 
     def Sentence_similarity_value_collect():     
         for sentence_value in polished_sentence_list:            
