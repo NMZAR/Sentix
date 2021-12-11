@@ -5,7 +5,21 @@ import matplotlib.pyplot as plt
 
 
 
-Database.Sentiment_analyser()
+
+    
+def start():
+
+
+        user_input_for_wish = input('do you want to know sentiment of this room y/n: ' )
+
+        if user_input_for_wish == 'y':
+                print("reconizing voice")
+##################################################################################
+
+        else:
+                Database.Sentiment_analyser()
+start() 
+
 
 positive = 0
 negative = 0

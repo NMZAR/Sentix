@@ -6,6 +6,7 @@ import spacy
 
 polisher_nl_pipe = spacy.load("en_core_web_sm")
 
+
 def Sentiment_analyser():
 
 
@@ -15,13 +16,13 @@ def Sentiment_analyser():
 
 
 
-    # user_input = input("Give me data: ")
+        # user_input = input("Give me data: ")
 
 
-    # def for_write():
-    #     data_for_write = open("Database.txt", "w")
-    #     data_for_write.write(user_input)
-    # for_write()
+        # def for_write():
+        #     data_for_write = open("Database.txt", "w")
+        #     data_for_write.write(user_input)
+        # for_write()
 
 
 
