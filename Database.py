@@ -1,4 +1,4 @@
-from numpy.core.fromnumeric import argsort, sort
+from numpy.core.fromnumeric import argsort
 import spacy
 
 
@@ -15,7 +15,7 @@ def Sentiment_analyser():
 
 
 
-    #user_input = input("Give me data: ")
+    # user_input = input("Give me data: ")
 
 
     # def for_write():
@@ -51,6 +51,7 @@ def Sentiment_analyser():
     bugs: Need to fix (gatter than 0.2000) storing values....
     bugs: sentences Need capitalize...
     bugs: user input capitalize...
+    Bugs: can't read more than 2 file....
     '''
     ##############################################################################################
 
@@ -139,5 +140,3 @@ def Sentiment_analyser():
             
                 
     # Storing_sentence_and_values()
-
-
