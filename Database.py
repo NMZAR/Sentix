@@ -1,45 +1,57 @@
+from nltk import text
 from numpy.core.fromnumeric import argsort
 import spacy
-
-
 
 
 polisher_nl_pipe = spacy.load("en_core_web_sm")
 
 
+
+
+
 def Sentiment_analyser():
 
+    
+
+
+    # def for_write():
+    #         data_for_write = open("Database.txt", "w")
+    #         data_for_write.write(user_input_given_data)
+    # for_write()
 
 
     userinput = input("What Sentiment do you want to know? : ")
     
 
 
-
-        # user_input = input("Give me data: ")
-
-
-        # def for_write():
-        #     data_for_write = open("Database.txt", "w")
-        #     data_for_write.write(user_input)
-        # for_write()
-
-
-
-
+###############################################################
+    '''
+    Reading Data From text file.
+    '''
     def for_read():
-        data_for_read = open("Database.txt", "r")
-        return data_for_read.read()
+        data_for_read = open("Database.txt", "r",  encoding="utf8")
+        return data_for_read.read()     
     for_read()
 
+#################################################################
+
+   
 
 
+    ########################################################################################
+    '''
+    Polish Data From Reading File...
+    '''
     def for_polish_data():
         polished_file = polisher_nl_pipe(for_read())
         return list(polished_file.sents) 
     for_polish_data()
+    ##########################################################################################
+   
 
-
+    '''
+    Listing Sentences and senteces value.
+    '''
     polished_sentence_list = for_polish_data()
     
     sentences_value_array = []
@@ -56,12 +68,24 @@ def Sentiment_analyser():
     '''
     ##############################################################################################
 
+
+
+
+
+#####################################################################################################
+    '''
+    Collecting Senteces Values....
+    '''
     def Sentence_similarity_value_collect():     
         for sentence_value in polished_sentence_list:            
             each_polished_sentence_value = sentence_value.similarity(polisher_nl_pipe(userinput))
             sentences_value_array.append(each_polished_sentence_value)               
     Sentence_similarity_value_collect()   
 
+######################################################################################################
+
+  
+    
 
 
 
@@ -69,37 +93,56 @@ def Sentiment_analyser():
 
 #Collecting index value of sorted array and biggest value holded sentence index number.
     index_value_of_sorted_array = argsort(sentences_value_array)
-    sentences_size_no = (len(index_value_of_sorted_array) - 1)
+    sorted_senteces_value_array = sorted(sentences_value_array)
     
+    sentences_size_no = (len(index_value_of_sorted_array) - 1)
+
+    
+    
+  
+    
+    
+    # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    #print(index_value_of_sorted_array) ### index value of sorted array
+    #print(index_value_of_sorted_array[sentences_size_no])
+    # print(sorted_senteces_value_array) ### shorted values of senteces.
+    # print("<<<<<<<<<<<<<<<<<<<<<<<<<")
+    #print(sentences_value_array[index_value_of_sorted_array[sentences_size_no]]) #sentences most bigger values
+    # print("----------------------")
+    #print(polished_sentence_list[index_value_of_sorted_array[sentences_size_no]])#most similar senteces
+    #the most powerful women  .........Sheikh Hasina worked with Khaleda Zia
+    
+
+    '''
+    Fetures:  Later will be add accuracy good. better. best
+
+    '''
+
 
     Serialised_sentences_array = []
     Serialised_sentences_array.clear()
-    #Sorting sentences bigger to smaller value....
-    for sentences in polished_sentence_list:
+    #Sorting sentences bigger to smaller value...
+    while 0.3 < sorted_senteces_value_array[sentences_size_no]:
+        
         Serialised_sentences_array.append((polished_sentence_list[index_value_of_sorted_array[sentences_size_no]]))
-        sentences_size_no = sentences_size_no - 1    
-
-        
-    
+        sentences_size_no = sentences_size_no - 1
 
 
+   
 
-    #Storing User Review in a order.
-    user_review_array = []
-    user_review_array.clear()
-    range_user_review_input = int (input("How Many sentiments of Human do you want to check? : " ))
-    count = 0
-######################################################################
 
-    while count < range_user_review_input:
-        user_review_array.append(Serialised_sentences_array[count])
-        count = count + 1
 
-######################################################################
+
+# # ######################################################################
+
 #Data storing in sentiment data base...
-    data_for_sentiment = open("sentiment_database", "w")
-    data_for_sentiment.write(str(user_review_array))
-        
+    data_for_sentiment = open("sentiment_database", "w", encoding="utf8")
+    data_for_sentiment.write(str(Serialised_sentences_array))
+
+
+# ######################################################################
+
+
 
 
     # #Storing Sentences in sorted Order.

@@ -7,19 +7,21 @@ import matplotlib.pyplot as plt
 
 
     
-def start():
+# def start():
 
 
-        user_input_for_wish = input('do you want to know sentiment of this room y/n: ' )
+#         user_input_for_wish = input('do you want to know sentiment of this room y/n: ' )
 
-        if user_input_for_wish == 'y':
-                print("reconizing voice")
-##################################################################################
+#         if user_input_for_wish == 'y':
+#                 print("reconizing voice")
+# ##################################################################################
 
-        else:
-                Database.Sentiment_analyser()
-start() 
-
+#         else:
+#                 Database.Sentiment_analyser()
+# start()
+# 
+#  
+Database.Sentiment_analyser()
 
 positive = 0
 negative = 0
@@ -35,7 +37,7 @@ feature: display...
 
 '''
 ##############################################################################################
-sentences = open("sentiment_database", "r")
+sentences = open("sentiment_database", "r", encoding="utf8")
 analysing_file =  sentences.read()
 analysis = TextBlob(analysing_file)
 
@@ -46,19 +48,19 @@ analysis = TextBlob(analysing_file)
 
 
 if analysis.sentiment.polarity < 0:
-        print("negative")
+       
         negative = - (analysis.sentiment.polarity) 
         positive = 1 - negative
     
         
 
 if analysis.sentiment.polarity >0: 
-        print("positve")
+        
         positive = analysis.sentiment.polarity
 
 
 else:
-        print("nutral")
+        
         equal = 0.1
 
 

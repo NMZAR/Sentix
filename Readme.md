@@ -1,8 +1,14 @@
 
-# Senti-X version 0.02 
+# Senti-X version 0.03 
  
 
-# it can analys now of covid sentiments.
+1: it can analysis any question sentiments which are related of stored data.
+2: 
+3:
+4: 
+5: 
+6: 
+7:
 
 
 
