@@ -1,5 +1,6 @@
 from numpy import negative, positive, equal
-import Database
+import Manually_checking
+import web_articales_checking
 from textblob import TextBlob 
 import matplotlib.pyplot as plt
 
@@ -21,7 +22,17 @@ import matplotlib.pyplot as plt
 # start()
 # 
 #  
-Database.Sentiment_analyser()
+
+
+
+
+Manually_checking.Manually_checking_Function()
+
+#web_articales_checking.Checking_articales()
+
+
+
+
 
 positive = 0
 negative = 0
@@ -39,9 +50,12 @@ feature: display...
 ##############################################################################################
 sentences = open("sentiment_database", "r", encoding="utf8")
 analysing_file =  sentences.read()
+
+
+
 analysis = TextBlob(analysing_file)
 
-
+print(analysing_file);
 
 #####################################################################################
 

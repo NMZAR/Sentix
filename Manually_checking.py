@@ -17,7 +17,7 @@ sentence_list = Database.Sentiment_analyser();
 
 
 
-def Manually_checking():
+def Manually_checking_Function():
 
 
     '''
@@ -60,7 +60,15 @@ def Manually_checking():
     giving return to the function similar sentences.
     '''
 
-    return similar_sentences_array;
+
+
+    #Data storing in sentiment data base...
+    data_for_sentiment = open("sentiment_database", "w", encoding="utf8")
+    data_for_sentiment.write(str(similar_sentences_array))
+
+
+    
+
 
                 
 
