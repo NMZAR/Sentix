@@ -4,6 +4,11 @@ import web_articales_checking
 from textblob import TextBlob 
 import matplotlib.pyplot as plt
 
+import Social_coment_checking
+import web_articales_checking
+import Wiki_sentiments
+import Room_voice_checking
+
 
 
 
@@ -21,14 +26,27 @@ import matplotlib.pyplot as plt
 #                 Database.Sentiment_analyser()
 # start()
 # 
-#  
+# userinput = input("What Kind Sentiment do you want to analyze?:\n Press 1 Manual\nPress 2 Web_Article\nPress 3 Wiki\nPress 4 Social\n")
 
 
 
 
-Manually_checking.Manually_checking_Function()
+# if userinput == 1:
+#         print("Press 1 Manual\n")
+# elif userinput == 2:
+#         print("Press 2 Web_Article\n")
 
-#web_articales_checking.Checking_articales()
+# elif userinput == 3:
+#         print("Press 3 Wiki\n")
+
+# elif userinput == 4:
+#         print("Press 4 Social\n")
+
+
+
+
+
+web_articales_checking.Checking_articales()
 
 
 
